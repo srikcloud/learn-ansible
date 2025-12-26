@@ -56,7 +56,7 @@
 
 - name: variable declaration Types
   hosts: localhost
-  connection:  local
+  connection: local
   vars:
     x: abc
     y:
@@ -65,7 +65,7 @@
     z:
       url: sample
       domain: example.com
-    tasks: 
+  tasks: 
     - name: Print url
       ansible.builtin.debug:
         msg: x - {{ x }} , y - {{ y[0] }}, z - {{ z["domain"] }}
