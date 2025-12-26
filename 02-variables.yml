@@ -37,14 +37,35 @@
 # 2.Number
 # 3.Boolean (yes/no true/false)
 
-- name: variable Types
+- name: variable Data Types
   hosts: localhost
   connection:  local
   vars:
     x: abc
-    y: 100
+    y: 100 # we can also user float values like 1.253
     z: true
   tasks: 
     - name: Print url
       ansible.builtin.debug:
         msg: x - {{ x }} , y - {{ y }}, z - {{ z }}
+
+## Variable declaration types
+# 1. Normal
+# 2. List
+# 3. Map
+
+- name: variable declaration Types
+  hosts: localhost
+  connection:  local
+  vars:
+    x: abc
+    y:
+      - 100
+      - 200
+    z:
+      url: sample
+      domain: example.com
+    tasks: 
+    - name: Print url
+      ansible.builtin.debug:
+        msg: x - {{ x }} , y - {{ y[0] }}, z - {{ z["domain"] }}
