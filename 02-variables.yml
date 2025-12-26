@@ -31,3 +31,20 @@
 #3.Play Level
 #4.Inventory Level
 #5.Error saying variable not declared if no where delcared
+
+## Variable Data Types
+# 1.String
+# 2.Number
+# 3.Boolean (yes/no true/false)
+
+- name: variable Types
+  hosts: localhost
+  connection:  local
+  vars:
+    x: abc
+    y: 100
+    z: true
+  tasks: 
+    - name: Print url
+      ansible.builtin.debug:
+        msg: x - {{ x }} , y - {{ y }}, z - {{ z }}
