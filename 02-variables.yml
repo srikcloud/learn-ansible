@@ -11,3 +11,15 @@
       ansible.builtin.debug:
         msg: url - {{ url }}
 
+# since varaible is declared on play level, then all the tasks can access that varaible
+
+- name: Task level variables
+  hosts: localhost
+  connection:  local
+  tasks: 
+    - name: Print url
+      ansible.builtin.debug:
+        msg: url - {{ url }}
+      vars: 
+        url: tasks.example.com
+        
