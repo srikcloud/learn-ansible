@@ -1,0 +1,13 @@
+# In Ansible variables can be declared in multiple places
+# Ansible variables can be accessed with {{ }} same like ${} in shell
+
+- name: Play level variables
+  hosts: localhost
+  connection:  local
+  vars:
+    url: play.example.com
+  tasks: 
+    - name: Print url
+      ansible.builtin.debug:
+        msg: url - {{ url }}
+
