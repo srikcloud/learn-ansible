@@ -23,15 +23,6 @@
       vars: 
         url: tasks.example.com
 
-# Since variable is declared on tasks level, then the only one task can access that variable
-# The same variable can be declared at command level using -e 
-# Now the variable precendece will come into picture
-#1.Command Line
-#2.Task Level
-#3.Play Level
-#4.Inventory Level
-#5.Error saying variable not declared if no where delcared
-
 ## Variable Data Types
 # 1.String
 # 2.Number
@@ -69,3 +60,18 @@
     - name: Print url
       ansible.builtin.debug:
         msg: x - {{ x }} , y - {{ y[0] }}, z - {{ z["domain"] }}
+
+
+# Since variable is declared on tasks level, then the only one task can access that variable
+# The same variable can be declared at command level using -e 
+# Now the variable precendece will come into picture
+#1.Command Line
+#2.Task Level
+#3.Roles Level
+#4.Play Level
+#5.Inventory Level
+#6.Error saying variable not declared if no where delcared
+
+
+# If our value is starting with variable then we require quotes
+# msg: url - {{ url }} --> this doesnt require quotes
