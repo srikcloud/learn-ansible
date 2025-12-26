@@ -22,4 +22,11 @@
         msg: url - {{ url }}
       vars: 
         url: tasks.example.com
-        
+
+# Since variable is declared on tasks level, then the only one task can access that variable
+# The same variable can be declared at command level using -e 
+# Now the variable precendece will come into picture
+#1.Command Line
+#2.Task Level
+#3.Play Level
+#4.Error saying variable not declared if no where delcared
