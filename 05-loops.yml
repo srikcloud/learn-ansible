@@ -1,0 +1,19 @@
+# Condition is about skipping a particular task to run or not.
+- name: Loop Demo
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Print Vegetables Name
+      ansible.builtin.debug:
+        msg: Vegetable Names - {{ item }}
+      loop:
+        - Carrot
+        - Tomato
+
+    - name: Print Name and Quantity
+      ansible.builtin.debug:
+        msg: Vegetable Name - {{ item["name"] }}  , Quantity - {{ item.quantity }}
+      loop:
+        - { name: Carrot, quantity: 100}
+        - { name: Tomato, quantity: 200}
+

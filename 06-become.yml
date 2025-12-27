@@ -1,0 +1,5 @@
+- name: Do thing as root user
+  hosts: all
+  become: yes # All the tasks will be run with sudo previlege
+  tasks:
+    -

@@ -1,0 +1,15 @@
+- name: Register a variable
+  connection: local
+  hosts: localhost
+  tasks:
+    - name: uptime
+      ansible.builtin.shell: uptime
+      register: out
+
+    - name: Print out
+      ansible.builtin.debug:
+        msg: " {{ out }}"
+
+    - name: Do not count this as a failure
+      ansible.builtin.command: /bin/false
+      ignore_errors: true
