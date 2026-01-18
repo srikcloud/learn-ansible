@@ -4,8 +4,8 @@
   tasks:
     - name: Nginx Container
       community.docker.docker_container:
-      name: nginx-sample
-      image: docker.io/nginx
-      state: started
-      ports:
-        - "8080:80"
+        name: nginx-sample
+        image: docker.io/nginx
+        state: started
+        ports:
+          - "8080:80"
