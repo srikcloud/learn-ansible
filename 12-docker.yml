@@ -2,7 +2,7 @@
   hosts: localhost
   connection: local
   tasks:
-    - name: Nginx Container
+    - name: Nginx container
       community.docker.docker_container:
         name: nginx-sample
         image: docker.io/nginx
